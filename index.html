@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#090d0f">
     <title>臺灣標準時間即時鐘</title>
-    <link rel="stylesheet" href="styles.css?v=20260603-2">
+    <link rel="stylesheet" href="styles.css?v=20260603-3">
   </head>
   <body>
     <main class="clock-shell" aria-label="臺灣標準時間即時鐘">
@@ -36,21 +36,22 @@
             </span>
             <span class="unit-label">MIN</span>
           </span>
-        </time>
 
-        <div class="support-row">
-          <span class="seconds-chip" aria-label="目前秒數">
-            <span class="seconds-label">SEC</span>
-            <span class="seconds-digits">
+          <span class="time-group seconds-group">
+            <span class="seconds-pair">
               <span class="second-digit" data-unit="second-tens">0</span>
               <span class="second-digit" data-unit="second-ones">0</span>
             </span>
+            <span class="unit-label">SEC</span>
           </span>
+        </time>
+
+        <div class="support-row">
           <p id="precision-note" class="precision-note">臺北標準時間 TST · 24 小時制</p>
         </div>
       </section>
     </main>
 
-    <script src="script.js?v=20260603-2"></script>
+    <script src="script.js?v=20260603-3"></script>
   </body>
 </html>
