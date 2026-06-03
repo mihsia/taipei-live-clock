@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#141514">
+    <title>台北即時校時鐘</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="clock-shell" aria-label="台北即時校時鐘">
+      <section class="clock-panel">
+        <div class="location-row">
+          <span class="signal-dot" aria-hidden="true"></span>
+          <span>TAIPEI · UTC+8 · ASIA/TAIPEI</span>
+        </div>
+
+        <div class="date-stack" aria-live="polite">
+          <p id="roc-date" class="date-line">中華民國 -- 年 -- 月 -- 日</p>
+          <p id="western-date" class="date-line muted">西元 ---- 年 -- 月 -- 日 星期-</p>
+        </div>
+
+        <time id="clock-time" class="flip-clock" datetime="00:00:00" aria-label="目前台北時間">
+          <span class="time-group">
+            <span class="digits-pair">
+              <span class="digit-card" data-unit="hour-tens">0</span>
+              <span class="digit-card" data-unit="hour-ones">0</span>
+            </span>
+            <span class="unit-label">HOUR</span>
+          </span>
+
+          <span class="time-group">
+            <span class="digits-pair">
+              <span class="digit-card" data-unit="minute-tens">0</span>
+              <span class="digit-card" data-unit="minute-ones">0</span>
+            </span>
+            <span class="unit-label">MIN</span>
+          </span>
+
+          <span class="time-group">
+            <span class="digits-pair">
+              <span class="digit-card" data-unit="second-tens">0</span>
+              <span class="digit-card" data-unit="second-ones">0</span>
+            </span>
+            <span class="unit-label">SEC</span>
+          </span>
+        </time>
+
+        <p id="precision-note" class="precision-note">同步顯示台北標準時間 · 24 小時制</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
