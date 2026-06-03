@@ -1,5 +1,6 @@
 const timeZone = "Asia/Taipei";
 const digitCards = Array.from(document.querySelectorAll(".digit-card"));
+const secondDigits = Array.from(document.querySelectorAll(".second-digit"));
 const clockTime = document.querySelector("#clock-time");
 const rocDate = document.querySelector("#roc-date");
 const westernDate = document.querySelector("#western-date");
@@ -9,6 +10,7 @@ const weekdayFormatter = new Intl.DateTimeFormat("zh-TW", {
 });
 
 let lastDigits = "";
+let lastMachineTime = "";
 
 function getTaipeiParts(date) {
   const parts = new Intl.DateTimeFormat("en-US", {
@@ -34,7 +36,8 @@ function updateClock() {
   const day = Number(parts.day);
   const rocYear = year - 1911;
   const weekday = weekdayFormatter.format(now);
-  const digits = `${parts.hour}${parts.minute}${parts.second}`;
+  const digits = `${parts.hour}${parts.minute}`;
+  const seconds = parts.second;
   const machineTime = `${parts.hour}:${parts.minute}:${parts.second}`;
 
   digitCards.forEach((card, index) => {
@@ -48,11 +51,24 @@ function updateClock() {
     }
   });
 
-  if (digits !== lastDigits) {
+  secondDigits.forEach((digit, index) => {
+    const nextDigit = seconds[index];
+
+    if (digit.textContent !== nextDigit) {
+      digit.textContent = nextDigit;
+      digit.classList.remove("is-changing");
+      void digit.offsetWidth;
+      digit.classList.add("is-changing");
+    }
+  });
+
+  if (machineTime !== lastMachineTime) {
     clockTime.setAttribute("datetime", machineTime);
     clockTime.setAttribute("aria-label", `目前台北時間 ${machineTime}`);
-    lastDigits = digits;
+    lastMachineTime = machineTime;
   }
+
+  lastDigits = digits;
 
   rocDate.textContent = `中華民國 ${rocYear} 年 ${month} 月 ${day} 日 ${weekday}`;
   westernDate.textContent = `西元 ${year} 年 ${month} 月 ${day} 日 ${weekday} · 24 小時制`;

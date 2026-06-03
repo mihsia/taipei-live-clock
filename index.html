@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#141514">
-    <title>台北即時校時鐘</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="theme-color" content="#090d0f">
+    <title>臺灣標準時間即時鐘</title>
+    <link rel="stylesheet" href="styles.css?v=20260603-2">
   </head>
   <body>
-    <main class="clock-shell" aria-label="台北即時校時鐘">
+    <main class="clock-shell" aria-label="臺灣標準時間即時鐘">
       <section class="clock-panel">
-        <div class="location-row">
+        <div class="location-row" aria-label="時區與所在地">
           <span class="signal-dot" aria-hidden="true"></span>
-          <span>TAIPEI · UTC+8 · ASIA/TAIPEI</span>
+          <span>宜蘭．臺灣 · Taiwan Standard Time · UTC+8</span>
         </div>
 
         <div class="date-stack" aria-live="polite">
@@ -36,20 +36,21 @@
             </span>
             <span class="unit-label">MIN</span>
           </span>
-
-          <span class="time-group">
-            <span class="digits-pair">
-              <span class="digit-card" data-unit="second-tens">0</span>
-              <span class="digit-card" data-unit="second-ones">0</span>
-            </span>
-            <span class="unit-label">SEC</span>
-          </span>
         </time>
 
-        <p id="precision-note" class="precision-note">同步顯示台北標準時間 · 24 小時制</p>
+        <div class="support-row">
+          <span class="seconds-chip" aria-label="目前秒數">
+            <span class="seconds-label">SEC</span>
+            <span class="seconds-digits">
+              <span class="second-digit" data-unit="second-tens">0</span>
+              <span class="second-digit" data-unit="second-ones">0</span>
+            </span>
+          </span>
+          <p id="precision-note" class="precision-note">臺北標準時間 TST · 24 小時制</p>
+        </div>
       </section>
     </main>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260603-2"></script>
   </body>
 </html>
