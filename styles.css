@@ -227,27 +227,30 @@ body::after {
     inset -0.08rem 0 0 rgba(66, 216, 197, 0.035),
     0 1.5rem 3.4rem var(--shadow);
   color: #d6d8d4;
-  font-family: "DIN Condensed", "Bebas Neue", Impact, "Arial Black", "Noto Sans TC", sans-serif;
-  font-size: clamp(5.2rem, 16vw, 19rem);
+  font-family: "Arial Black", Impact, "SF Pro Display", "Noto Sans TC", sans-serif;
+  font-size: clamp(5.4rem, 16.4vw, 19.5rem);
   font-weight: 900;
   line-height: 1;
+  -webkit-text-stroke: clamp(0.035rem, 0.13vw, 0.13rem) rgba(238, 241, 236, 0.34);
   text-shadow:
-    0 0.045em 0 #070909,
-    0 0.14em 0.32em rgba(0, 0, 0, 0.44),
-    0 0 1.35rem rgba(255, 255, 255, 0.08);
+    0 0.035em 0 #050707,
+    0.025em 0.025em 0 #050707,
+    0 0.12em 0.26em rgba(0, 0, 0, 0.5),
+    0 0 1.2rem rgba(255, 255, 255, 0.12);
 }
 
 .second-digit {
   aspect-ratio: 0.72;
   border-radius: clamp(0.55rem, 1.25vw, 1rem);
-  color: rgba(213, 217, 214, 0.72);
-  font-size: clamp(2.6rem, 7.2vw, 8.2rem);
+  color: rgba(225, 229, 224, 0.86);
+  font-size: clamp(2.85rem, 7.6vw, 8.75rem);
+  -webkit-text-stroke: clamp(0.025rem, 0.08vw, 0.08rem) rgba(238, 241, 236, 0.28);
   box-shadow:
     inset 0 0.12rem 0 rgba(255, 255, 255, 0.055),
     inset 0 -1.1rem 1.7rem rgba(0, 0, 0, 0.36),
     inset -0.06rem 0 0 rgba(66, 216, 197, 0.03),
     0 1rem 2.4rem rgba(0, 0, 0, 0.4);
-  filter: brightness(0.82);
+  filter: brightness(0.95);
 }
 
 .digit-card::before,
