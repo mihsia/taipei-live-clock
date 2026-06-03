@@ -1,6 +1,7 @@
 const timeZone = "Asia/Taipei";
 const digitCards = Array.from(document.querySelectorAll(".digit-card"));
 const secondDigits = Array.from(document.querySelectorAll(".second-digit"));
+const timeSeparators = Array.from(document.querySelectorAll(".time-separator"));
 const clockTime = document.querySelector("#clock-time");
 const rocDate = document.querySelector("#roc-date");
 const westernDate = document.querySelector("#western-date");
@@ -39,6 +40,7 @@ function updateClock() {
   const digits = `${parts.hour}${parts.minute}`;
   const seconds = parts.second;
   const machineTime = `${parts.hour}:${parts.minute}:${parts.second}`;
+  const shouldDimSeparators = Number(seconds) % 2 === 1;
 
   digitCards.forEach((card, index) => {
     const nextDigit = digits[index];
@@ -60,6 +62,10 @@ function updateClock() {
       void digit.offsetWidth;
       digit.classList.add("is-changing");
     }
+  });
+
+  timeSeparators.forEach((separator) => {
+    separator.classList.toggle("is-dim", shouldDimSeparators);
   });
 
   if (machineTime !== lastMachineTime) {
