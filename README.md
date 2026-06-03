@@ -43,3 +43,4 @@ https://mihsia.github.io/taipei-live-clock/
 - 放大 HOUR / MIN / SEC 標籤以提升遠距閱讀性。
 - 收斂時、分主數字尺寸，改善 Mac PowerPoint 中過大的不協調感。
 - 讓冒號依秒數同步閃爍，偶數秒亮、奇數秒暗。
+- 將冒號調整到翻頁鐘中線附近，改為圓角雙點樣式，並移除秒數前的冒號。
